@@ -20,12 +20,24 @@ public class Hero extends LivingThing{
         super(name,maximumHP,attack);
     }
 
+    @Override
+        public void attack(LivingThing opponent) {
+            if (!isDead()) {
+                int damage = (int) (Math.random() * getAttack());
+                if(damage==0){
+                    System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n",getName(),opponent.getName());
+                }else {
+                    System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", getName(), opponent.getName(), damage);
+                }
+                opponent.wounded(damage);
+            }
+        }
+
     /**
      * 自身へ攻撃されたときのダメージ処理をするメソッド。
      * 指定されたダメージを hitPoint から引き、死亡判定を行う。
      * @param damage 受けたダメージ
      */
-    @Override
         public void wounded(int damage){
             setHitPoint(damage);
             if(getHitPoint()<=0){

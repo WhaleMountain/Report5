@@ -28,6 +28,7 @@ public class LivingThing {
     public void setHitPoint(int damage){this.hitPoint-=damage;}
     public int getHitPoint(){return hitPoint;}
     public void setDead(boolean dead){this.dead=dead;}
+    public int getAttack(){return attack;}
 
     public void wounded(int damage){
         hitPoint-=damage;
