@@ -24,8 +24,12 @@ public class Hero extends LivingThing{
         public void attack(LivingThing opponent) {
             if (!isDead()) {
                 int damage = (int) (Math.random() * getAttack());
+                setRand((int)(Math.random()*100));
                 if(damage==0){
                     System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n",getName(),opponent.getName());
+                }else if(getRand()<40){
+                    System.out.printf("%sの攻撃！会心の一撃！！%sに%dのダメージを与えた！！\n",getName(),opponent.getName(),damage*2);
+                    damage*=2;
                 }else {
                     System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", getName(), opponent.getName(), damage);
                 }

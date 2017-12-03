@@ -5,6 +5,7 @@ public class LivingThing {
     private int hitPoint;
     private int attack;
     private boolean dead;
+    private int rand;
 
     public LivingThing(String name,int hitPoint,int attack){
         this.name=name;
@@ -29,6 +30,8 @@ public class LivingThing {
     public int getHitPoint(){return hitPoint;}
     public void setDead(boolean dead){this.dead=dead;}
     public int getAttack(){return attack;}
+    public void setRand(int rand){this.rand=rand;}
+    public int getRand(){return rand;}
 
     public void wounded(int damage){
         hitPoint-=damage;
