@@ -1,4 +1,4 @@
-package jp.ac.uryukyu.ie.e175733;
+/**/package jp.ac.uryukyu.ie.e175733;
 
 import org.junit.jupiter.api.Test;
 
